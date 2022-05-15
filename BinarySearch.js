@@ -2,6 +2,8 @@
 // Target - 7
 // TimeComplexity: O(log n)
 
+// One Condition: THe Array Must Be Sorted
+
 
 function BinarySearch(Array, Target) {
     let start = 0;
