@@ -1,5 +1,7 @@
 // Array - [1,2,3,4,5,6,7,8,9]
 // Target - 7
+// TimeComplexity: O(log n)
+
 
 function BinarySearch(Array, Target) {
     let start = 0;
