@@ -1,4 +1,4 @@
-// BubbleSort is used to Sort the Array in Ascending Order
+// BubbleSort is used to Sort the Array
 //Example Array - [9,  8,  7,  6 , 1,  2,  3,  4]
                 // j   j+1                     i
 
