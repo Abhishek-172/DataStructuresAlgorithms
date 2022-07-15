@@ -25,6 +25,7 @@ class SinglyLinkedList {
         return this;
     }
     pop() {
+        if (!this.head) return undefined;
         let current = this.head;
         let newTail = current;
         while (current.next) {
@@ -41,6 +42,13 @@ class SinglyLinkedList {
         }
         return current;
     }
+    shift() {
+        if (!this.head) return undefined;
+        let current = this.head;
+        this.head = current.next;
+        this.length--;
+        return this.current.val;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -48,4 +56,6 @@ list.push('Abhishek Pandey');
 list.push('Divya Pandey');
 list.push('Padma Pandey');
 list.push('Ravi Uday Pandey');
+list.pop();
+list.shift()
 console.log('I am the List:::', list);
