@@ -117,6 +117,45 @@ class SinglyLinkedList {
             return true;
         }
     }
+    // Remove a Node From Specific Position
+    remove(index) {
+        if(index < 0 || index > this.length) {
+            return false;
+        }
+        else if(index==this.length-1) {
+            return this.pop(index);
+        }
+        else if (index === 0) {
+            return this.shift(index);
+        }
+        else {
+            let previousNode = this.get(index-1);
+            let temp = previousNode.next;
+            previousNode.next = temp.next;
+            this.length--;
+            return this;
+        }
+    }
+    // Reverse a Linked list
+    reverse() {
+        //Swap Head to tail
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        // Create two pointers
+        let prev = null;
+        let next;
+
+        //Loop through the list
+        for(let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -125,3 +164,17 @@ list.push('Apple');
 list.push('Atlassian');
 list.push('Google');
 list.push('GoldmanSachs');
+
+
+
+// Big O Notation
+// Insertion - O(1)
+// Removal It Depends O(1) or O(n)
+// Searching O(n)
+// Accessing O(n)
+
+// RECAP:
+// 1. Singly Linked Lists are an excellent alternative to arrays when insertion and deletion
+// at the beginning are frequently required.
+// 2. Arrays contain a Built in Index whereas LL does not have it.
+// 3. Stacks and Queues are Built using Linked Lists
