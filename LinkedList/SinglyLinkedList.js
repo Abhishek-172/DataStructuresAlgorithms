@@ -156,6 +156,16 @@ class SinglyLinkedList {
         }
         return this;
     }
+    // Print the LinkedList
+    print() {
+        let current = this.head;
+        let arr = [];
+        while(current.next) {
+            arr.push(current.val);
+            current = current.next;
+        }
+        return arr;
+    }
 }
 
 let list = new SinglyLinkedList();
