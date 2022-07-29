@@ -19,4 +19,10 @@ So here we dont have to do the re-indexing of the elements
 
 But in Shift and Unshift way we need to do the reindexing of all the next elements
 Which is going to be very expensive in terms of time complexity.
+
+Big o of Stacks
+-> Insertion - O(1)
+-> Removal - O(1) 
+-> Searching - O(n)
+-> Accessing - O(n)
 */
