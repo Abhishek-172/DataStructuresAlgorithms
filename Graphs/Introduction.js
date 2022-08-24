@@ -89,4 +89,23 @@ Real World Usage:
     -> GPS Navigation
     -> Solving Mazes
     -> AI (Shortest Path to Win the Game)
+
+Traversal Techniques:
+Here we will be traversing a Graph that is not a Tree
+1. DFS (Traversing in Downward Direction)
+    -> Recursive Way
+    -> Iterative Way
+2. BFS
+
+Pseudocode for DFS Recursive Way:
+    -> The function should accept a starting node.
+    -> Create a list to store the end result, to be returned at the very end
+    -> Create an Object to store visited vertices
+    -> Create a Helper function which accepts a vertex
+        -> The helper function should return early if the vertex is empty
+        -> The helper function should place the vertex it accepts into the visited object and
+            push that vertex into the result array.
+        -> Loop over all the values in the adjacency list for that vertex
+        -> If any of those values have not been visited recusively invoke the helper function with that vertex.
+    -> Invoke the helper function with the starting vertex.
 */

@@ -32,6 +32,26 @@ class Graph {
         }
     }
     // TODO: Remove Vertex, Edge is Remaining
+    depthFirstSearchRecursive(start) {
+        const result = [];
+        const visited = {};
+        const adjacencyList = this.adjacencyList;
+
+        // Recursive Function
+        (function DFS(vertex) {
+            if (!vertex) return null;
+            // Mark the Node as Visited
+            visited[vertex] = true;
+            // Add the Visited Node to Result Array
+            result.push[vertex];
+            adjacencyList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    return DFS(neighbor);
+                }
+            });
+        }(start));
+        return result;
+    }
 }
 
 let g = new Graph();
