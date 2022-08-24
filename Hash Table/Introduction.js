@@ -36,4 +36,7 @@ Hash Tables: (A Key Value Datastore)
             Now using Linear Probing we will check for the next index i.e. 5 whether is it empty or not.
             If not then move forward to 6th index, if yes add it there.
 
+Big(O) of Hash Function - O(1) in Insertion Deletion and Accessing
+Searching a Key - O(1)
+Searching a Value - O(n)
 */
