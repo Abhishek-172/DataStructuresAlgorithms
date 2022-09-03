@@ -52,6 +52,64 @@ class Graph {
         }(start));
         return result;
     }
+    /*
+    Pseudocode DFS (Iterative):
+    1. Function should accept a starting node.
+    2. Create a stack to help use keep track of vertices (use a list/array)
+    3. Create a list to store the end result to be returned at very end.
+    4. Create an object to store visited vertices
+    5. Add the starting vertex to the stack and mark it visited
+    6. While the stack has something in it.
+        6.1 Pop the next vertex from the stack.
+        6.2 If that vertex has'nt been visited yet:
+            6.2.1 Mark it as visited
+            6.2.2 Add it to result list
+            6.2.3 Push all of its neighbors into the stack.
+    7. Return the result array.
+    */
+    depthFirstSearchIterative(start) {
+        const stack = [start];
+        const result = [];
+        const visited = {};
+        const adjacencyList = this.adjacencyList;
+        let currentVertex;
+
+        visited[start] = true;
+        while (stack.length) {
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    stack.push(neighbor);
+                }
+            });
+        }
+        return result;
+    }
+    // Breadth First Search
+    BreadthFirstSearch(start) {
+        const queue = [start];
+        const result  = [];
+        const visited = {};
+        let currentVertex;
+        visited[start] = true;
+        
+        while (queue.length) {
+            // Remove the Element from a Queue, FIFO Way
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            });
+        }
+        return result;
+    }
 }
 
 let g = new Graph();
